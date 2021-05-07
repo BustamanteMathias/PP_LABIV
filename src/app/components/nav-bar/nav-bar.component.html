@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"></a>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" aria-controls="appNavigation"
+    aria-expanded="!isCollapsed" aria-label="Toggle navigation" (click)="toggleMenu('bienvenida')">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="appNavigation">
+    <div class="navbar-nav mr-auto">
+      <a (click)="toggleMenu('bienvenida')" class="nav-item nav-link" routerLink="" routerLinkActive="active">Bienvenida</a>
+      <a (click)="toggleMenu('login')" class="nav-item nav-link" routerLink="" routerLinkActive="active">Login</a>
+      <a (click)="toggleMenu('repartidor/alta')" class="nav-item nav-link" routerLink="" routerLinkActive="active">Alta Repartidor</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/PP-LABIV",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <div class="jumbotron">
+    <div class="cabecera" *ngIf="this.verCabecera">
+      <h1 class="display-4">Hola, bienvenido!</h1>
+      <p class="lead">Buenstamante Mathias <strong>PP 1er Cuatrimestre 2021</strong>.</p>
+      <hr class="my-4">
+    </div>
+    <div class="formularioIngresar">
+      <form>
+        <!-- LOGIN -->
+        <div class="login" *ngIf="this.verLogin">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo</label>
+            <input type="email" class="form-control" [(ngModel)]="this._correo" name="uname1" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="this._pass" name="uname2" required>
+            <small id="emailHelp" class="form-text text-muted">Minimo 6 caracteres</small>
+          </div>
+          <hr class="my-4">
+          <button type="button" class="btn btn-primary" (click)="Ingresar()"><strong>INGRESAR</strong></button>
+        </div>
+        <!-- FIN LOGIN -->
+      </form>
+    </div>
+  </div>
+</div>
