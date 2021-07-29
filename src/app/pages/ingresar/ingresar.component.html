@@ -1,0 +1,29 @@
+<app-nav-bar [estaLogueado]="false" [esAdmin]="false"></app-nav-bar>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5"><br>
+      <h1 class="heading-section">INGRESAR</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="login-wrap p-4 p-md-5">
+        <div style="display: flex; justify-content: center; align-items: center; ">
+          <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png">
+        </div>
+        <div class="login-form">
+          <div class="form-group">
+            <input type="text" class="form-control rounded-left" placeholder="Correo" required="" [(ngModel)]="this.user">
+          </div>
+          <div class="form-group d-flex">
+            <input type="password" class="form-control rounded-left" placeholder="Contraseña" required="" [(ngModel)]="this.pass">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary rounded submit p-3 px-5" (click)="Continuar()">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

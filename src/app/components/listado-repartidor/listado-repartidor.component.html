@@ -1,0 +1,17 @@
+<p><strong>LISTA DE REPARTIDORES</strong></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Repartidor</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of this.listaRepartidores; let i=index">
+      <th>{{i+1}}</th>
+      <td>{{r.nombre}}</td>
+      <td><button type="button" class="btn btn-dark" (click)="SelectRepartidor(r)">Info</button></td>
+    </tr>
+  </tbody>
+</table>

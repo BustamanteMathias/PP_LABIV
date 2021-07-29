@@ -1,0 +1,12 @@
+<p><strong>PAIS DEL REPARTIDOR SELECCIONADO</strong></p>
+<br>
+
+<div *ngIf="this.dataPais != ''">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img style="width:200px; height:75px;" src={{this.dataPais[0].flag}}>
+  </div> <br>
+  <p> <strong>PAIS: </strong> {{this.dataPais[0].name}}</p>
+  <p> <strong>CAPITAL: </strong> {{this.dataPais[0].capital}}</p>
+  <p> <strong>REGIÓN: </strong> {{this.dataPais[0].region}}</p>
+  <p> <strong>POBLACIÓN: </strong> {{this.dataPais[0].population}}</p>
+</div>

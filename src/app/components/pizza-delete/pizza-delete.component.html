@@ -1,0 +1,17 @@
+<div class="card-body">
+  <ul class="list-unstyled mt-3 mb-4">
+    <ng-container *ngIf="this.pizzaSelect.nombre == ''; else elseTemplate">
+      <input type="text" class="form-control rounded-left" placeholder="Nombre" required="" disabled>
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Ingredientes" required="" disabled>
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Precio" required="" disabled>
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Peso" required="" disabled>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <input type="text" class="form-control rounded-left" placeholder="Nombre" required="" disabled [(ngModel)]="this.pizzaSelect.nombre">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Ingredientes" required="" disabled [(ngModel)]="this.pizzaSelect.ingredientes">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Peso" required="" disabled [(ngModel)]="this.pizzaSelect.peso">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Precio" required="" disabled [(ngModel)]="this.pizzaSelect.precio">
+    </ng-template>
+  </ul>
+  <button type="button" class="w-100 btn btn-lg btn-danger" (click)="PizzaDelete(this.pizzaSelect)">Aceptar</button>
+</div>

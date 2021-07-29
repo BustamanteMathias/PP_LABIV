@@ -1,0 +1,11 @@
+<p><strong>GESTIONAR REPARTIDOR SELECCIONADO</strong></p>
+<br>
+<div *ngIf="this.repartidor.nombre != ''">
+  <p> <strong>NOMBRE: </strong> {{this.repartidor.nombre}}</p>
+  <p *ngIf="this.pizza > this.repartidor.capacidadDeTransporte" style="color: red;"> <strong>CAPACIDAD DE TRANSPORTE: </strong> {{this.pizza}}/{{this.repartidor.capacidadDeTransporte}}</p>
+  <p *ngIf="this.pizza <= this.repartidor.capacidadDeTransporte"> <strong>CAPACIDAD DE TRANSPORTE: </strong> {{this.pizza}}/{{this.repartidor.capacidadDeTransporte}}</p>
+  <p *ngIf="this.repartidor.transportePropio.toString() == 'true'"> <strong>TRANSPORTE PROPIO: </strong>SI</p>
+  <p *ngIf="this.repartidor.transportePropio.toString() == 'false'"> <strong>TRANSPORTE PROPIO: </strong>NO</p> <br>
+  <button type="button" class="btn btn-success btn-lg" (click)="Confirmar()">Confirmar</button> <br>
+  <button style="margin-top: 5px;" type="button" class="btn btn-secondary btn-sm" (click)="Limpiar()">Limpiar Pedido</button>
+</div>

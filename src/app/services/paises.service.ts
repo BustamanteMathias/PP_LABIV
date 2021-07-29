@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-
 export class PaisesService {
 
   listaPaises:any;
@@ -15,5 +14,9 @@ export class PaisesService {
 
   GetPaises(){
     return this.http.get('https://restcountries.eu/rest/v2/region/europe');
+  }
+
+  GetPais(pais: string){
+    return this.http.get('https://restcountries.eu/rest/v2/name/' + pais);
   }
 }

@@ -1,0 +1,11 @@
+<p><strong>DETALLE DEL REPARTIDOR SELECCIONADO</strong></p>
+<br>
+<div *ngIf="this.repartidor.nombre != ''">
+  <p> <strong>NOMBRE: </strong> {{this.repartidor.nombre}}</p>
+  <p> <strong>DNI: </strong> {{this.repartidor.dni}}</p>
+  <p> <strong>EDAD: </strong> {{this.repartidor.edad}}</p>
+  <p> <strong>CAPACIDAD DE TRANSPORTE: </strong> {{this.repartidor.capacidadDeTransporte}}</p>
+  <p> <strong>PAIS: </strong> {{this.repartidor.pais}}</p>
+  <p *ngIf="this.repartidor.transportePropio.toString() == 'true'"> <strong>TRANSPORTE PROPIO: </strong>SI</p>
+  <p *ngIf="this.repartidor.transportePropio.toString() == 'false'"> <strong>TRANSPORTE PROPIO: </strong>NO</p>
+</div>

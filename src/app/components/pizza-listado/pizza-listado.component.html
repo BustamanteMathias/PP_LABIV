@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table text-center" *ngIf="this.pizzasListado != []">
+    <thead>
+      <tr>
+        <th style="width: 34%;"></th>
+        <th style="width: 16.5%;">Ingredientes</th>
+        <th style="width: 16.5%;">Precio</th>
+        <th style="width: 16.5%;">Peso</th>
+        <th style="width: 16.5%;">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of this.pizzasListado">
+        <th scope="row" class="text-start">{{p.nombre.toUpperCase()}}</th>
+        <td>{{p.ingredientes.toUpperCase()}}</td>
+        <td>{{p.precio}}</td>
+        <td>{{p.peso}}</td>
+        <td><button type="button" class="btn btn-dark" (click)="PizzaSelect(p)">Seleccionar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

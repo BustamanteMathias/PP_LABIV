@@ -1,0 +1,9 @@
+<div class="card-body">
+  <ul class="list-unstyled mt-3 mb-4">
+    <input type="text" class="form-control rounded-left" placeholder="Nombre" required="" [(ngModel)]="this.nombre">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Ingredientes" required="" [(ngModel)]="this.ingredientes">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Peso" required="" [(ngModel)]="this.peso">
+    <input style="margin-top: 3px;" type="text" class="form-control rounded-left" placeholder="Precio" required="" [(ngModel)]="this.precio">
+  </ul>
+  <button type="button" class="w-100 btn btn-lg btn-outline-primary" (click)="PizzaAdd()">Crear</button>
+</div>

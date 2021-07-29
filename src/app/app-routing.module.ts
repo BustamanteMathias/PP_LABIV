@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BienvenidaComponent } from './components/page/bienvenida/bienvenida.component';
-import { LoginComponent } from './components/page/login/login.component';
-import { RepartidorAltaComponent } from './components/page/repartidor-alta/repartidor-alta.component';
-import { CanActivateGuard } from './guards/can-activate.guard';
+import { ValidateAdminGuard } from './guards/validate-admin.guard';
+import { ValidateLoginGuard } from './guards/validate-login.guard';
+import { BienvenidoComponent } from './pages/bienvenido/bienvenido.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { GestionarRepartoComponent } from './pages/gestionar-reparto/gestionar-reparto.component';
+import { IngresarComponent } from './pages/ingresar/ingresar.component';
+import { SalenPizzasComponent } from './pages/salen-pizzas/salen-pizzas.component';
 
-//RUTEO
 const routes: Routes = [
-  { path: "", redirectTo: "bienvenida", pathMatch: "full" },
-  { path: "bienvenida", component: BienvenidaComponent },
-  { path: "login", component: LoginComponent },
-  { path: "repartidor/alta", component: RepartidorAltaComponent},//, canActivate: [CanActivateGuard]},
-  { path: "**", component: BienvenidaComponent },
+  { path: '', redirectTo: 'bienvenido', pathMatch: "full" },
+  { path: 'bienvenido', component: BienvenidoComponent },
+  { path: 'ingresar', component: IngresarComponent },
+  { path: 'gestion-reparto', component: GestionarRepartoComponent, canActivate: [ValidateLoginGuard] },
+  { path: 'salen-pizzas', component: SalenPizzasComponent, canActivate: [ValidateLoginGuard, ValidateAdminGuard] },
+  //REPARTIDOR LAZY LOAD
+  {
+    path: 'repartidor',
+    loadChildren: () => import ('./modules/repartidor-lazy-load/modulo-repartidor.module').then(m => m.ModuloRepartidorModule)
+  },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

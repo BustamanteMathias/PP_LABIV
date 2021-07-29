@@ -1,0 +1,41 @@
+<app-nav-bar [estaLogueado]="this.logueado" [esAdmin]="this.admin"></app-nav-bar>
+
+<div class="container py-4">
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div style="height: 30vh; overflow: hidden;">
+      <app-listado-repartidor [listaRepartidores]="this.listaRepartidores" (repartidorSelect)="GetRepartidor($event)"></app-listado-repartidor>
+    </div>
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <div style="height: 32vh; overflow: hidden;">
+          <app-detalle-repartidor-gestion [repartidor]="this.repartidor" [pizza]="this.pizzaNew" [pedido]="this.armadoPedido" (limpiar)="Limpiar()"></app-detalle-repartidor-gestion>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <div style="height: 32vh; overflow: hidden;">
+          <p><strong>LISTADO DE PIZZAS DISPONIBLES</strong></p>
+          <table class="table" *ngIf="this.repartidor.nombre != ''">
+            <thead>
+              <tr>
+                <th scope="col">Pizza</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of this.listaPizzas">
+                <td>{{p.nombre}}</td>
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="Agregar(p)">Agregar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/PP-LABIV",
+    "public": "dist/RecuPPLABIV",
     "ignore": [
       "firebase.json",
       "**/.*",
